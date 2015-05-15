@@ -1,0 +1,358 @@
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class JLottery2 extends JFrame implements ItemListener
+{
+   FlowLayout flow = new FlowLayout();
+   JLabel label = new JLabel("Pick 4 numbers for the lottery and see your results!");
+   JLabel label2 = new JLabel("");
+   JLabel label3 = new JLabel("");
+   JLabel label4 = new JLabel("");
+   JLabel label5 = new JLabel("");
+   
+   JCheckBox one = new JCheckBox("1", false);
+   JCheckBox two = new JCheckBox("2", false);
+   JCheckBox three = new JCheckBox("3", false);
+   JCheckBox four = new JCheckBox("4", false);
+   JCheckBox five = new JCheckBox("5", false);
+   JCheckBox six = new JCheckBox("6", false);
+   JCheckBox seven = new JCheckBox("7", false);
+   JCheckBox eight = new JCheckBox("8", false);
+   JCheckBox nine = new JCheckBox("9", false);
+   JCheckBox ten = new JCheckBox("10", false);
+   JCheckBox eleven = new JCheckBox("11", false);
+   JCheckBox twelve = new JCheckBox("12", false);
+   JCheckBox thirteen = new JCheckBox("13", false);
+   JCheckBox fourteen = new JCheckBox("14", false);
+   JCheckBox fifteen = new JCheckBox("15", false);
+   JCheckBox sixteen = new JCheckBox("16", false);
+   JCheckBox seventeen = new JCheckBox("17", false);
+   JCheckBox eighteen = new JCheckBox("18", false);
+   JCheckBox nineteen = new JCheckBox("19", false);
+   JCheckBox twenty = new JCheckBox("20", false);
+     
+   String output, insChosen;
+  
+   int score;
+   int[] myPicks = new int[4];
+   int[] computerPicks = new int[4];
+   int keepTrack = 0;
+   
+   public JLottery2()
+   {
+      super("Super Lotto!");
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      setLayout(new FlowLayout());
+      label.setFont(new Font("Arial", Font.ITALIC, 22));
+      label2.setFont(new Font("Arial", Font.ITALIC, 20));
+      label3.setFont(new Font("Arial", Font.ITALIC, 20));
+      label4.setFont(new Font("Arial", Font.ITALIC, 22));
+      label5.setFont(new Font("Arial", Font.ITALIC, 22));
+      
+      one.addItemListener(this);
+      two.addItemListener(this);
+      three.addItemListener(this);
+      four.addItemListener(this);
+      five.addItemListener(this);
+      six.addItemListener(this);
+      seven.addItemListener(this);
+      eight.addItemListener(this);
+      nine.addItemListener(this);
+      ten.addItemListener(this);
+      eleven.addItemListener(this);
+      twelve.addItemListener(this);
+      thirteen.addItemListener(this);
+      fourteen.addItemListener(this);
+      fifteen.addItemListener(this);
+      sixteen.addItemListener(this);
+      seventeen.addItemListener(this);
+      eighteen.addItemListener(this);
+      nineteen.addItemListener(this);
+      twenty.addItemListener(this);
+      
+      add(label);
+      
+      add(one);
+      add(two);
+      add(three);
+      add(four);
+      add(five);
+      add(six);
+      add(seven);
+      add(eight);
+      add(nine);
+      add(ten);
+      add(eleven);
+      add(twelve);
+      add(thirteen);
+      add(fourteen);
+      add(fifteen);
+      add(sixteen);
+      add(seventeen);
+      add(eighteen);
+      add(nineteen);
+      add(twenty);
+      
+      add(label2);
+      add(label3);
+      add(label4);
+      add(label5);
+   }
+    
+   
+   
+  public void itemStateChanged(ItemEvent check)
+  {
+      // Actions based on choice go here
+	  Object source = check.getSource();
+	  int select = check.getStateChange();
+	  //assign the number picked to the array...increase position with each choice
+	  //if they decide not to pick that number the array position is set to 0 and
+	  //the choice is subtracted from the total
+	  if(source == one)
+	    if(select == ItemEvent.SELECTED){
+	    	myPicks[keepTrack] = 1;
+	    	keepTrack += 1;
+	    }
+	    else{
+	    	keepTrack -= 1;
+	    	myPicks[keepTrack] = 0;	  		
+	    }
+	  if(source == two)
+		 if(select == ItemEvent.SELECTED){
+		    	myPicks[keepTrack] = 2;
+		    	keepTrack += 1;
+		} 
+		 else{
+			 	keepTrack -= 1;
+		    	myPicks[keepTrack] = 0;		    	
+		 }
+	  if(source == three)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 3;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == four)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 4;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == five)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 5;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == six)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 6;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == seven)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 7;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == eight)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 8;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == nine)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 9;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  if(source == ten)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 10;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+	  
+	  if(source == eleven)
+		    if(select == ItemEvent.SELECTED){
+		    	myPicks[keepTrack] = 11;
+		    	keepTrack += 1;
+		    }
+		    else{
+		    	keepTrack -= 1;
+		    	myPicks[keepTrack] = 0;	  		
+		    }
+		  if(source == twelve)
+			 if(select == ItemEvent.SELECTED){
+			    	myPicks[keepTrack] = 12;
+			    	keepTrack += 1;
+			} 
+			 else{
+				 	keepTrack -= 1;
+			    	myPicks[keepTrack] = 0;		    	
+			 }
+		  if(source == thirteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 13;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == fourteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 14;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == fifteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 15;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == sixteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 16;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == seventeen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 17;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == eighteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 18;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == nineteen)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 19;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		  if(source == twenty)
+				 if(select == ItemEvent.SELECTED){
+				    	myPicks[keepTrack] = 20;
+				    	keepTrack += 1;
+				} 
+				 else{
+					 	keepTrack -= 1;
+				    	myPicks[keepTrack] = 0;		    	
+				 }
+		    
+	    //once player selects 4 numbers call the checkResults function
+	    if(keepTrack == 4){	    	
+	    	checkResults();
+	    }
+  }
+  
+  public static void main(String[] arguments)
+  {
+      final int FRAME_WIDTH = 500;
+      final int FRAME_HEIGHT = 320;
+      JLottery2 frame =
+         new JLottery2();
+      frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+      frame.setVisible(true);
+  }
+  
+  public void checkResults(){
+	  //pick computer numbers and check for same number
+	  computerPicks[0] = (int)(Math.random()*20) + 1;
+	  computerPicks[1] = (int)(Math.random()*20) + 1;
+	  computerPicks[2] = (int)(Math.random()*20) + 1;
+	  computerPicks[3] = (int)(Math.random()*20) + 1;
+		
+	  if(computerPicks[0] == computerPicks[1])
+			computerPicks[1] = (int)(Math.random()*20) + 1;
+	  if(computerPicks[2] == computerPicks[0] || computerPicks[2] == computerPicks[1])
+			computerPicks[2] = (int)(Math.random()*20) + 1;
+	  if(computerPicks[3] == computerPicks[0] || computerPicks[3] == computerPicks[1] || computerPicks[3] == computerPicks[2] )
+			computerPicks[3] = (int)(Math.random()*20) + 1;
+	  if(computerPicks[3] == computerPicks[0] || computerPicks[3] == computerPicks[1] || computerPicks[3] == computerPicks[2] )
+			computerPicks[3] = (int)(Math.random()*20) + 1;
+	  
+	  //check for matching numbers in both arrays with nested for loop and score results
+	  int j;
+	  int i;
+	  for(i=0; i<myPicks.length; i++){
+		  for(j=0; j<computerPicks.length; j++){
+			  if(myPicks[i]==computerPicks[j]){
+				  score++;
+			  }
+				  
+		  }
+	  }
+	  // check results and display
+	  label2.setText(" You picked "+myPicks[0]+", "+myPicks[1]+", "+myPicks[2]+", "+myPicks[3]+".");
+	  label3.setText(" The Computer picked "+computerPicks[0]+", "+computerPicks[1]+", "+computerPicks[2]+", "+computerPicks[3]+".");
+	  label4.setText("      You got "+score+" right!      ");
+	  //display winnings
+	  if(score==0)
+		  label5.setText("      Sorry...you don't win anything.      ");
+	  if(score==1)
+		  label5.setText("      You win your dollar back!      ");
+	  if(score==2)
+		  label5.setText("      You win five hundred bucks!      ");
+	  if(score==3)
+		  label5.setText("      You win a thousand bucks!      ");
+	  if(score==4)
+		  label5.setText("      You win a million dollars!      ");
+  }
+  
+}
